@@ -32,5 +32,6 @@
         <file>ui/compile_screen/CompileScreen.qml</file>
         <file>ui/remote_control_screen/RemoteControlScreen.qml</file>
         <file>ui/configure_screen/ConfigureScreen.qml</file>
+        <file>ui/component/CustomDefineType.qml</file>
     </qresource>
 </RCC>
