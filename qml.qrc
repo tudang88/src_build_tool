@@ -1,0 +1,36 @@
+<RCC>
+    <qresource prefix="/">
+        <file>ui/assets/H_compile_image.png</file>
+        <file>ui/assets/H_configure_image.png</file>
+        <file>ui/assets/H_git_image.png</file>
+        <file>ui/assets/H_Left_Pane_Art.png</file>
+        <file>ui/assets/H_remote_image.png</file>
+        <file>ui/home_screen/HomeScreen.qml</file>
+        <file>ui/assets/h_button_bg_focus.png</file>
+        <file>ui/assets/h_button_bg_normal.png</file>
+        <file>ui/assets/h_button_bg_hover.png</file>
+        <file>ui/component/Copyright.qml</file>
+        <file>ui/component/HomeButtonComponent.qml</file>
+        <file>ui/MainLayer.qml</file>
+        <file>ui/component/GlobalMenu.qml</file>
+        <file>ui/assets/global_menu_bg.png</file>
+        <file>ui/assets/global_menu_git_icon.png</file>
+        <file>ui/assets/global_menu_home_icon.png</file>
+        <file>ui/component/GlobalMenuButton.qml</file>
+        <file>ui/assets/global_menu_git_icon_checked.png</file>
+        <file>ui/assets/global_menu_git_icon_normal.png</file>
+        <file>ui/assets/global_menu_home_checked.png</file>
+        <file>ui/assets/global_menu_home_nomal.png</file>
+        <file>ui/assets/global_menu_compile_icon_checked.png</file>
+        <file>ui/assets/global_menu_compile_icon_normal.png</file>
+        <file>ui/assets/global_menu_configure_icon_checked.png</file>
+        <file>ui/assets/global_menu_configure_icon_normal.png</file>
+        <file>ui/assets/global_menu_rc_icon_checked.png</file>
+        <file>ui/assets/global_menu_rc_icon_normal.png</file>
+        <file>ui/assets/global_menu_bg_scale.png</file>
+        <file>ui/git_screen/GitScreen.qml</file>
+        <file>ui/compile_screen/CompileScreen.qml</file>
+        <file>ui/remote_control_screen/RemoteControlScreen.qml</file>
+        <file>ui/configure_screen/ConfigureScreen.qml</file>
+    </qresource>
+</RCC>
