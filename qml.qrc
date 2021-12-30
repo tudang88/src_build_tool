@@ -33,5 +33,27 @@
         <file>ui/remote_control_screen/RemoteControlScreen.qml</file>
         <file>ui/configure_screen/ConfigureScreen.qml</file>
         <file>ui/component/CustomDefineType.qml</file>
+        <file>ui/component/GitOperationTabView.qml</file>
+        <file>ui/assets/compile_resolution_tab_bg.png</file>
+        <file>ui/assets/git_app_tab_bg.png</file>
+        <file>ui/assets/git_hmi_tab_bg.png</file>
+        <file>ui/assets/compile_resolution_tab_inactive_bg.png</file>
+        <file>ui/assets/git_app_tab_inactive_bg.png</file>
+        <file>ui/assets/git_hmi_tab_inactived_bg.png</file>
+        <file>ui/component/CustomTabComponent.qml</file>
+        <file>ui/component/CompileOperationTabView.qml</file>
+        <file>ui/assets/edit_button_normal.png</file>
+        <file>ui/assets/hmi_app_link_status_actived.png</file>
+        <file>ui/assets/hmi_app_link_status_inactived.png</file>
+        <file>ui/assets/git_cancel_button_clicked.png</file>
+        <file>ui/assets/git_cancel_button_normal.png</file>
+        <file>ui/assets/git_obtain_button_normal.png</file>
+        <file>ui/assets/git_obtain_button_pressed.png</file>
+        <file>ui/assets/compile_button_normal.png</file>
+        <file>ui/assets/compile_button_pressed.png</file>
+        <file>ui/assets/compile_cancel_normal.png</file>
+        <file>ui/assets/compile_cancel_pressed.png</file>
+        <file>ui/assets/compile_report_normal.png</file>
+        <file>ui/assets/compile_report_pressed.png</file>
     </qresource>
 </RCC>

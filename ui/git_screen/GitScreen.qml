@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.12
+import "../component"
 Item {
     id: git_root
     property real local_scale: 0.75
@@ -7,323 +8,143 @@ Item {
     signal clickedCompileButton
     signal clickedRemoteControlButton
     signal clickedConfigureButton
-    clip: true
+
     Rectangle {
         id : git_backgroud
         anchors.fill: parent
         color: "white"
     }
-    ListModel {
-        id: git_hmi_list_model
-        ListElement {
-            appName: "Application 1"
-        }
-        ListElement {
-            appName: "Application 2"
-        }
-        ListElement {
-            appName: "Application 3"
-        }
-        ListElement {
-            appName: "Application 4"
-        }
-        ListElement {
-            appName: "Application 5"
-        }
-        ListElement {
-            appName: "Application 7"
-        }
-        ListElement {
-            appName: "Application 8"
-        }
-        ListElement {
-            appName: "Application 1"
-        }
-        ListElement {
-            appName: "Application 2"
-        }
-        ListElement {
-            appName: "Application 3"
-        }
-        ListElement {
-            appName: "Application 4"
-        }
-        ListElement {
-            appName: "Application 5"
-        }
-        ListElement {
-            appName: "Application 7"
-        }
-        ListElement {
-            appName: "Application 8"
-        }
-        ListElement {
-            appName: "Application 1"
-        }
-        ListElement {
-            appName: "Application 2"
-        }
-        ListElement {
-            appName: "Application 3"
-        }
-        ListElement {
-            appName: "Application 4"
-        }
-        ListElement {
-            appName: "Application 5"
-        }
-        ListElement {
-            appName: "Application 7"
-        }
-        ListElement {
-            appName: "Application 8"
-        }
-        ListElement {
-            appName: "Application 1"
-        }
-        ListElement {
-            appName: "Application 2"
-        }
-        ListElement {
-            appName: "Application 3"
-        }
-        ListElement {
-            appName: "Application 4"
-        }
-        ListElement {
-            appName: "Application 5"
-        }
-        ListElement {
-            appName: "Application 7"
-        }
-        ListElement {
-            appName: "Application 8"
-        }
-        ListElement {
-            appName: "Application 1"
-        }
-        ListElement {
-            appName: "Application 2"
-        }
-        ListElement {
-            appName: "Application 3"
-        }
-        ListElement {
-            appName: "Application 4"
-        }
-        ListElement {
-            appName: "Application 5"
-        }
-        ListElement {
-            appName: "Application 7"
-        }
-        ListElement {
-            appName: "Application 8"
-        }
-    }
-    ListModel {
-        id: git_app_list_model
-        ListElement {
-            appName: "App 1"
-        }
-        ListElement {
-            appName: "App 2"
-        }
-        ListElement {
-            appName: "App 3"
-        }
-        ListElement {
-            appName: "App 4"
-        }
-        ListElement {
-            appName: "App 5"
-        }
-        ListElement {
-            appName: "App 7"
-        }
-        ListElement {
-            appName: "App 8"
-        }
-        ListElement {
-            appName: "App 1"
-        }
-        ListElement {
-            appName: "App 2"
-        }
-        ListElement {
-            appName: "App 3"
-        }
-        ListElement {
-            appName: "App 4"
-        }
-        ListElement {
-            appName: "App 5"
-        }
-        ListElement {
-            appName: "App 7"
-        }
-        ListElement {
-            appName: "App 8"
-        }
-        ListElement {
-            appName: "App 1"
-        }
-        ListElement {
-            appName: "App 2"
-        }
-        ListElement {
-            appName: "App 3"
-        }
-        ListElement {
-            appName: "App 4"
-        }
-        ListElement {
-            appName: "App 5"
-        }
-        ListElement {
-            appName: "App 7"
-        }
-        ListElement {
-            appName: "App 8"
-        }
-        ListElement {
-            appName: "App 1"
-        }
-        ListElement {
-            appName: "App 2"
-        }
-        ListElement {
-            appName: "App 3"
-        }
-        ListElement {
-            appName: "App 4"
-        }
-        ListElement {
-            appName: "App 5"
-        }
-        ListElement {
-            appName: "App 7"
-        }
-        ListElement {
-            appName: "App 8"
-        }
-        ListElement {
-            appName: "App 1"
-        }
-        ListElement {
-            appName: "App 2"
-        }
-        ListElement {
-            appName: "App 3"
-        }
-        ListElement {
-            appName: "App 4"
-        }
-        ListElement {
-            appName: "App 5"
-        }
-        ListElement {
-            appName: "App 7"
-        }
-        ListElement {
-            appName: "App 8"
-        }
-    }
-
-    Rectangle {
-        id: git_hmi_area
-        z:1
-        width: 1176 * git_root.local_scale
-        height: 350 * git_root.local_scale
+    GitOperationTabView {
+        id: git_hmi_tab_area
+        local_scale: git_root.local_scale
         anchors {
             top: git_root.top
             left: git_root.left
             leftMargin: 40 * git_root.local_scale
             topMargin: 100 * git_root.local_scale
         }
-        color: "#d7f9fb"
-        GridView {
-            id: git_hmi_tab
-            anchors.horizontalCenter: git_hmi_area.horizontalCenter
-            clip: true
-            cellHeight: 350/3 * git_root.local_scale
-            cellWidth: 1176/5 * git_root.local_scale
-            width: 1176 * git_root.local_scale
-            height: 350 * git_root.local_scale
-            model: git_hmi_list_model
-            delegate: Rectangle {
-                width: GridView.view.cellWidth
-                height: GridView.view.cellHeight
-                color: "transparent"
-                Rectangle {
-                    width: 152 * git_root.local_scale
-                    height: 44 * git_root.local_scale
-                    anchors.centerIn: parent
-                    color: "#c4c4c4"
-                    radius: 20
-                    Text {
-                        id: app_name
-                        anchors.centerIn: parent
-                        text:appName
-                    }
-                }
-            }
-        }
     }
+    // hmi-app link button
     Rectangle {
-        id: git_app_area
-        z:2
-        width: 1176 * git_root.local_scale
-        height: 350 * git_root.local_scale
+        id: git_hmi_app_link
+        property bool isSelected: false
+        color: "transparent"
+        width: git_hmi_app_img.width
+        height: git_hmi_app_img.height
         anchors {
             top: git_root.top
-            left: git_root.left
-            leftMargin: 40 * git_root.local_scale
-            topMargin: 100 * git_root.local_scale
+            right: git_root.right
+            topMargin: 137 * git_root.local_scale
+            rightMargin: 254 * git_root.local_scale
         }
-        color: "red"
-        GridView {
-            id: git_app_tab
-            anchors.horizontalCenter: git_app_area.horizontalCenter
-            clip: true
-            cellHeight: 350/3 * git_root.local_scale
-            cellWidth: 1176/5 * git_root.local_scale
-            width: 1176 * git_root.local_scale
-            height: 350 * git_root.local_scale
-            model: git_app_list_model
-            delegate: Rectangle {
-                width: GridView.view.cellWidth
-                height: GridView.view.cellHeight
-                color: "transparent"
-                Rectangle {
-                    width: 152 * git_root.local_scale
-                    height: 44 * git_root.local_scale
-                    anchors.centerIn: parent
-                    color: "#c4c4c4"
-                    radius: 20
-                    Text {
-                        anchors.centerIn: parent
-                        text:appName
-                    }
+
+        Image {
+            id: git_hmi_app_img
+            width: implicitWidth * git_root.local_scale
+            height: implicitHeight * git_root.local_scale
+            source: git_hmi_app_link.isSelected?"qrc:/ui/assets/hmi_app_link_status_actived.png":"qrc:/ui/assets/hmi_app_link_status_inactived.png"
+        }
+        MouseArea {
+            anchors.fill: parent
+            onClicked: git_hmi_app_link.isSelected = !git_hmi_app_link.isSelected
+        }
+
+    }
+    // hmi-app link button
+    Rectangle {
+        id: git_edit_button
+        color: "transparent"
+        width: git_edit_img.width
+        height: git_edit_img.height
+        anchors {
+            top: git_root.top
+            right: git_root.right
+            topMargin: 400 * git_root.local_scale
+            rightMargin: 257 * git_root.local_scale
+        }
+
+        Image {
+            id: git_edit_img
+            width: implicitWidth * git_root.local_scale
+            height: implicitHeight * git_root.local_scale
+            source: "qrc:/ui/assets/edit_button_normal.png"
+        }
+        MouseArea {
+            anchors.fill: parent
+            onClicked: console.log("open edit page")
+            onEntered: {
+                git_edit_button.border.width = 2;
+                git_edit_button.border.color = "blue";
+            }
+            onExited: {
+                git_edit_button.border.width = 0;
+            }
+        }
+
+    }
+
+    // button obtain
+    Rectangle {
+        id: git_obtain_button
+        property bool isPressed: false
+        color: "transparent"
+        width: git_obtain_img.width
+        height: git_obtain_img.height
+        anchors {
+            top: git_root.top
+            right: git_root.right
+            topMargin: 126 * git_root.local_scale
+            rightMargin: 24 * git_root.local_scale
+        }
+
+        Image {
+            id: git_obtain_img
+            width: implicitWidth * git_root.local_scale
+            height: implicitHeight * git_root.local_scale
+            source: git_obtain_button.isPressed ? "qrc:/ui/assets/git_obtain_button_pressed.png":"qrc:/ui/assets/git_obtain_button_normal.png"
+        }
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                if (!git_obtain_button.isPressed) {
+                    console.log("clicked obtain")
+                    git_obtain_button.isPressed = true;
                 }
             }
         }
-    }
 
-    Button {
-        id: git_check_zoder_button
-        Text {
-            id: button_context
-            anchors.centerIn: parent
-            text: qsTr("ChangeZorder")
+    }
+    // button cancel
+    Rectangle {
+        id: git_cancel_button
+        property bool isPressed: false
+        color: "transparent"
+        width: git_cancel_img.width
+        height: git_cancel_img.height
+        anchors {
+            top: git_root.top
+            right: git_root.right
+            topMargin: 236 * git_root.local_scale
+            rightMargin: 24 * git_root.local_scale
         }
 
-        onClicked: {
-//            console.log("change Z order")
-            var curZorder = git_hmi_area.z;
-            git_hmi_area.z = git_app_area.z
-            git_app_area.z = curZorder
-
+        Image {
+            id: git_cancel_img
+            width: implicitWidth * git_root.local_scale
+            height: implicitHeight * git_root.local_scale
+            source: git_cancel_button.isPressed ? "qrc:/ui/assets/git_cancel_button_clicked.png":"qrc:/ui/assets/git_cancel_button_normal.png"
         }
+        MouseArea {
+            anchors.fill: parent
+            onClicked:  git_obtain_button.isPressed = false // cancel current running progress
+            onPressed: {
+                git_cancel_button.isPressed = !git_cancel_button.isPressed;
+            }
+            onReleased: {
+                git_cancel_button.isPressed = !git_cancel_button.isPressed;
+            }
+        }
+
     }
+
 }
