@@ -17,6 +17,8 @@ Item {
     GitOperationTabView {
         id: git_hmi_tab_area
         local_scale: git_root.local_scale
+        first_tab_model: 15
+        second_tab_model: 20
         anchors {
             top: git_root.top
             left: git_root.left
@@ -147,4 +149,26 @@ Item {
 
     }
 
+    /* Source tree area */
+    SourceTreeSelectionComponent {
+        id: git_source_tree
+        local_scale: git_root.local_scale
+        anchors {
+            top: git_hmi_tab_area.bottom
+            left: git_root.left
+            leftMargin: 40 * git_root.local_scale
+            topMargin: 14 * git_root.local_scale
+        }
+    }
+    /* Git console view*/
+    CustomConsoleView {
+        id: git_console
+        __scale: git_root.local_scale
+        anchors {
+            top: git_source_tree.bottom
+            left: git_root.left
+            topMargin: 16 * git_root.local_scale
+            leftMargin: 40 * git_root.local_scale
+        }
+    }
 }

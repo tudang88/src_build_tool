@@ -55,5 +55,10 @@
         <file>ui/assets/compile_cancel_pressed.png</file>
         <file>ui/assets/compile_report_normal.png</file>
         <file>ui/assets/compile_report_pressed.png</file>
+        <file>ui/component/SourceTreeSelectionComponent.qml</file>
+        <file>ui/assets/Browse_source_tree_button_normal.png</file>
+        <file>ui/assets/Browse_source_tree_button_pressed.png</file>
+        <file>ui/assets/source_tree_edit_bg.png</file>
+        <file>ui/component/CustomConsoleView.qml</file>
     </qresource>
 </RCC>

@@ -13,11 +13,13 @@ Item {
         LAYER_2,
         LAYER_3
     }
-    property ListModel first_tab_model : ListModel {}
-    property ListModel second_tab_model : ListModel {}
-    property ListModel third_tab_model : ListModel {}
+   implicitWidth: first_tab.width
+   implicitHeight: first_tab.height
+    property alias first_tab_model: first_tab.listmodel
+    property alias second_tab_model: second_tab.listmodel
     property var currentTabOrder: [3, 2, 1] // the z-order of tab is managed by this array
     function moveToFront(tabIndex) {
+//        console.log("TAB VIEW size: ", tab_view.width, tab_view.height);
         switch (tabIndex) {
         case GitOperationTabView.TabName.FIRST:
             tab_view.currentTabOrder[GitOperationTabView.TabName.FIRST] = GitOperationTabView.TabOrder.LAYER_3;

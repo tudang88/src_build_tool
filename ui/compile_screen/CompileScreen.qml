@@ -16,6 +16,9 @@ Item {
     CompileOperationTabView {
         id: cpl_tab_area
         local_scale: cpl_root.local_scale
+        first_tab_model: 10
+        second_tab_model: 15
+        third_tab_model: 5
         anchors {
             top: cpl_root.top
             left: cpl_root.left
@@ -117,5 +120,16 @@ Item {
         }
     }
 
-
+    /* Source tree area */
+    SourceTreeSelectionComponent {
+        id: cpl_source_tree
+        local_scale: cpl_root.local_scale
+        anchors {
+            top: cpl_tab_area.bottom
+            left: cpl_root.left
+            leftMargin: 40 * cpl_root.local_scale
+            topMargin: 14 * cpl_root.local_scale
+        }
+        onClickOnBrowse: console.log("Click on Compile Browse");
+    }
 }
