@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     //disable resize window
     view.setMinimumSize(0.75 * QSize(1440, 1024));
     view.setMaximumSize(0.75 * QSize(1440, 1024));
-    qDebug()<< "Size: " << view.size();
+//    qDebug()<< "Size: " << view.size();
     view.show();
     return app.exec();
 }

@@ -8,7 +8,6 @@ Item {
     signal clickedCompileButton
     signal clickedRemoteControlButton
     signal clickedConfigureButton
-
     Rectangle {
         id : git_backgroud
         anchors.fill: parent
@@ -157,18 +156,39 @@ Item {
             top: git_hmi_tab_area.bottom
             left: git_root.left
             leftMargin: 40 * git_root.local_scale
-            topMargin: 14 * git_root.local_scale
+            topMargin: 5 * git_root.local_scale
         }
     }
-    /* Git console view*/
+    /* Git console view */
     CustomConsoleView {
         id: git_console
         __scale: git_root.local_scale
+        console_model: 100
         anchors {
             top: git_source_tree.bottom
             left: git_root.left
-            topMargin: 16 * git_root.local_scale
+            topMargin: 6 * git_root.local_scale
             leftMargin: 40 * git_root.local_scale
+        }
+    }
+    /* Log filter area */
+    ConsoleLogFilterComponent {
+        id: git_log_filter
+        __scale: git_root.local_scale
+        anchors {
+            top: git_source_tree.bottom
+            left: git_console.right
+            topMargin: 77 * git_root.local_scale
+            leftMargin: 11 * git_root.local_scale
+        }
+    }
+    /* Copyright */
+    Copyright {
+        local_scale: git_root.local_scale
+        anchors {
+            bottom: git_root.bottom
+            left: git_root.left
+            leftMargin: 510 * git_root.local_scale
         }
     }
 }

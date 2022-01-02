@@ -128,8 +128,42 @@ Item {
             top: cpl_tab_area.bottom
             left: cpl_root.left
             leftMargin: 40 * cpl_root.local_scale
-            topMargin: 14 * cpl_root.local_scale
+            topMargin: 5 * cpl_root.local_scale
         }
         onClickOnBrowse: console.log("Click on Compile Browse");
     }
+    /* Git console view */
+    CustomConsoleView {
+        id: cpl_console
+        __scale: cpl_root.local_scale
+        console_model: 200
+        anchors {
+            top: cpl_source_tree.bottom
+            left: cpl_root.left
+            topMargin: 6 * cpl_root.local_scale
+            leftMargin: 40 * cpl_root.local_scale
+        }
+    }
+
+    /* Log filter area */
+    ConsoleLogFilterComponent {
+        id: cpl_log_filter
+        __scale: cpl_root.local_scale
+        anchors {
+            top: cpl_source_tree.bottom
+            left: cpl_console.right
+            topMargin: 77 * cpl_root.local_scale
+            leftMargin: 11 * cpl_root.local_scale
+        }
+    }
+    /* Copyright */
+    Copyright {
+        local_scale: cpl_root.local_scale
+        anchors {
+            bottom: cpl_root.bottom
+            left: cpl_root.left
+            leftMargin: 510 * cpl_root.local_scale
+        }
+    }
+
 }

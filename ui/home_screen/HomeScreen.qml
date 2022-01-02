@@ -102,14 +102,15 @@ Item {
             h_root.clickedConfigureButton();
         }
     }
-    // Copyright Mark
-    Copyright {
-        local_scale: 0.75
-        anchors {
-            top: h_root.top
-            left: h_left_pane_art.right
-            leftMargin: 286 * h_root.local_scale
-            topMargin: 996 * h_root.local_scale
-        }
-    }
+//    // Copyright Mark
+//    Copyright {
+//        local_scale: 0.75
+//        anchors {
+//            bottom: h_root.bottom
+//            left: h_left_pane_art.right
+//            horizontalCenter: h_root.horizontalCenter
+////            leftMargin: 286 * h_root.local_scale
+////            topMargin: 996 * h_root.local_scale
+//        }
+//    }
 }

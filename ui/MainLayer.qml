@@ -10,9 +10,10 @@ Item {
         "qrc:/ui/remote_control_screen/RemoteControlScreen.qml",
         "qrc:/ui/configure_screen/ConfigureScreen.qml"]
 
-    // only the MainLayer store the size of windows, others windows will binding to this value
+    /* only the MainLayer store the size of windows, others windows will binding to this value */
     width: 1440 * scale
     height: 1024 * scale
+    focus: true
     Loader {
         id: main_loader
         anchors.fill: main_layer_root
