@@ -69,5 +69,33 @@
         <file>ui/assets/warning_filter_checked.png</file>
         <file>ui/assets/warning_filter_normal.png</file>
         <file>ui/component/CustomScrollBar.qml</file>
+        <file>ui/component/ConfigureGitComponent.qml</file>
+        <file>ui/component/ConfigureHeadLine.qml</file>
+        <file>ui/component/ConfigureCompileComponent.qml</file>
+        <file>ui/component/ConfigureRemoteControlComponent.qml</file>
+        <file>ui/component/ConfigureThemeComponent.qml</file>
+        <file>ui/assets/cfg_browse_clicked.png</file>
+        <file>ui/assets/cfg_browse_normal.png</file>
+        <file>ui/assets/configure_apply_clicked.png</file>
+        <file>ui/assets/configure_apply_normal.png</file>
+        <file>ui/assets/configure_cancel_clicked.png</file>
+        <file>ui/assets/configure_cancel_normal.png</file>
+        <file>ui/assets/git_protocol_http.png</file>
+        <file>ui/assets/git_protocol_ssh.png</file>
+        <file>ui/assets/pw_lock.png</file>
+        <file>ui/assets/pw_show.png</file>
+        <file>ui/component/ConfigureTwoEditText.qml</file>
+        <file>ui/component/ConfigureEditTextBrowserButton.qml</file>
+        <file>ui/component/ConfigureEditText.qml</file>
+        <file>ui/component/ConfigureCheckButton.qml</file>
+        <file>ui/component/ConfigurePassword.qml</file>
+        <file>ui/assets/configure_check_button_checked.png</file>
+        <file>ui/assets/configure_check_button_normal.png</file>
+        <file>ui/component/ConfigureTargetProduct.qml</file>
+        <file>ui/component/CustomRadioButton.qml</file>
+        <file>ui/assets/configure_vendor_21cy_normal.png</file>
+        <file>ui/assets/configure_vendor_21cy_selected.png</file>
+        <file>ui/assets/configure_vendor_m7g_normal.png</file>
+        <file>ui/assets/configure_vendor_m7g_selected.png</file>
     </qresource>
 </RCC>

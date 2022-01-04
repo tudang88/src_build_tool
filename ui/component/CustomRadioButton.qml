@@ -1,16 +1,16 @@
 import QtQuick.Controls 2.12
 import QtQuick 2.0
 RadioButton {
-    id: custom_radio
-    property real local_scale: 1.0
+    id: control
+    property real __scale: 1.0
     property var normal_image: ""
     property var checked_image: ""
     width: glb_radio_button_image.width
     height: glb_radio_button_image.height
     indicator: Image {
         id: glb_radio_button_image
-        width: implicitWidth * local_scale
-        height: implicitHeight * local_scale
+        width: implicitWidth * __scale
+        height: implicitHeight * __scale
     }
     // binding state with checked property
     state: checked ? "CHECKED": "NORMAL"
