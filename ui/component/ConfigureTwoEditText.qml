@@ -35,13 +35,13 @@ Item {
     }
     TextEdit {
         id: main_edit_text
-        horizontalAlignment: TextEdit.AlignRight
+//        horizontalAlignment: TextEdit.AlignRight
         width: edit_text_bg.width
         anchors {
             top: edit_text_bg.top
             left: edit_text_bg.left
             topMargin: 2
-            rightMargin: 5
+            leftMargin: 5
         }
         font.pixelSize: 20 * two_edit_text.__scale
         font.family: "Arial"
@@ -77,13 +77,13 @@ Item {
     }
     TextEdit {
         id: second_edit_text
-        horizontalAlignment: TextEdit.AlignRight
+//        horizontalAlignment: TextEdit.AlignRight
         width: second_edit_text_bg.width
         anchors {
             top: second_edit_text_bg.top
             left: second_edit_text_bg.left
             topMargin: 2
-            rightMargin: 5
+            leftMargin: 5
         }
         font.pixelSize: 20 * two_edit_text.__scale
         font.family: "Arial"

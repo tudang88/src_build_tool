@@ -41,7 +41,6 @@ Item {
             top: edit_text_bg.top
             left: edit_text_bg.left
             topMargin: 2
-            rightMargin: 5
         }
         font.pixelSize: 20 * edit_password.__scale
         font.family: "Arial"

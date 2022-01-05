@@ -97,5 +97,16 @@
         <file>ui/assets/configure_vendor_21cy_selected.png</file>
         <file>ui/assets/configure_vendor_m7g_normal.png</file>
         <file>ui/assets/configure_vendor_m7g_selected.png</file>
+        <file>ui/assets/image_mode.png</file>
+        <file>ui/assets/interactive_mode.png</file>
+        <file>ui/assets/screenshot_normal.png</file>
+        <file>ui/assets/screenshot_pressed.png</file>
+        <file>ui/assets/video_mode.png</file>
+        <file>ui/assets/refresh_icon.png</file>
+        <file>ui/component/StreamModeButton.qml</file>
+        <file>ui/component/StreamingWebView.qml</file>
+        <file>ui/component/CustomPushButton.qml</file>
+        <file>ui/assets/dialog_bg_blur.png</file>
+        <file>ui/component/EditHmiDialog.qml</file>
     </qresource>
 </RCC>

@@ -18,7 +18,7 @@ Item {
     ConfigureTwoEditText {
         id: configure_jpeg_server
         __scale: configure_remote_control_component.__scale
-        title: "Remote Control"
+        title: "Jpeg Server"
         adding_info: "Port"
         anchors {
             top: configure_remote_control_head.bottom
