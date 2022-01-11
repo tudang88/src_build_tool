@@ -4,10 +4,28 @@ import "../component"
 Item {
     id: git_root
     property real local_scale: 0.75
+    property var dialogHolder: null
     signal clickedGitButton
     signal clickedCompileButton
     signal clickedRemoteControlButton
     signal clickedConfigureButton
+    function createDiaglog() {
+        var component = Qt.createComponent("qrc:/ui/component/EditHmiDialog.qml");
+        dialogHolder = component.createObject(git_root.parent.parent, {"x":0, "y":0});
+        if (dialogHolder !== null) {
+            dialogHolder.__scale = git_root.local_scale
+            dialogHolder.anchors.centerIn = dialogHolder.parent
+            dialogHolder.destroyMe.connect(destroyDialog)
+            dialogHolder.scale_in_anime()
+        }
+    }
+
+    function destroyDialog() {
+        if (dialogHolder !== null) {
+            dialogHolder.destroy()
+            dialogHolder = null
+        }
+    }
     Rectangle {
         id : git_backgroud
         anchors.fill: parent
@@ -51,7 +69,7 @@ Item {
         }
 
     }
-    // hmi-app link button
+    // edit button
     Rectangle {
         id: git_edit_button
         color: "transparent"
@@ -72,7 +90,10 @@ Item {
         }
         MouseArea {
             anchors.fill: parent
-            onClicked: console.log("open edit page")
+            onClicked:  {
+                console.log("open edit page")
+                git_root.createDiaglog();
+            }
             onEntered: {
                 git_edit_button.border.width = 2;
                 git_edit_button.border.color = "blue";

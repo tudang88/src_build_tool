@@ -6,6 +6,7 @@ Rectangle {
     property bool isPressed: false
     property var normal_img: ""
     property var pressed_img: ""
+    signal clicked()
     width: button_icon.width
     height: button_icon.height
     Image {
@@ -22,6 +23,7 @@ Rectangle {
         anchors.fill: parent
         onPressed: custom_push_button.isPressed = true
         onReleased: custom_push_button.isPressed = false
+        onClicked: custom_push_button.clicked()
     }
 
 }

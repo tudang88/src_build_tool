@@ -108,5 +108,9 @@
         <file>ui/component/CustomPushButton.qml</file>
         <file>ui/assets/dialog_bg_blur.png</file>
         <file>ui/component/EditHmiDialog.qml</file>
+        <file>ui/assets/dialog_cancel.png</file>
+        <file>ui/assets/dialog_cancel_pressed.png</file>
+        <file>ui/assets/dialog_ok.png</file>
+        <file>ui/assets/dialog_ok_pressed.png</file>
     </qresource>
 </RCC>
