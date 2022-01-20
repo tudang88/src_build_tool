@@ -35,6 +35,59 @@ Item {
         width: 1316 * hmi_edit_dialog.__scale
         height: 924 * hmi_edit_dialog.__scale
         anchors.centerIn: parent
+        Text {
+            id: title_text
+            text: qsTr("HMI Source target selection")
+            font.pixelSize: 36 * hmi_edit_dialog.__scale
+            font.weight: Font.Bold
+            font.family: "Arial"
+            color: "#2D0EEB"
+            anchors {
+                top: parent.top
+                horizontalCenter: parent.horizontalCenter
+                topMargin: 18 * hmi_edit_dialog.__scale
+            }
+        }
+        // ListView area
+        Rectangle {
+            id: list_view_box
+            width: 1298 * hmi_edit_dialog.__scale
+            height: 765 * hmi_edit_dialog.__scale
+            color: "grey"
+            anchors {
+                horizontalCenter: parent.horizontalCenter
+                top: title_text.bottom
+            }
+        }
+
+        Rectangle {
+            id: select_all_button
+            property bool isPressed: false
+            width: 174 * hmi_edit_dialog.__scale
+            height: 35 * hmi_edit_dialog.__scale
+            color: "#9DF4DF"
+            radius: 15
+            anchors {
+                bottom: parent.bottom
+                bottomMargin: 47 * hmi_edit_dialog.__scale
+                left: parent.left
+                leftMargin: 15 * hmi_edit_dialog.__scale
+            }
+
+            Text {
+                id: select_all_button_text
+                text: select_all_button.isPressed? qsTr("Clear all"): qsTr("Select all")
+                font.weight: Font.Bold
+                font.family: "Arial"
+                color: "#2F1A1A"
+                font.pixelSize: 24 * hmi_edit_dialog.__scale
+                anchors.centerIn: parent
+            }
+            MouseArea {
+                anchors.fill: parent
+                onClicked:  select_all_button.isPressed = !select_all_button.isPressed
+            }
+        }
 
         CustomPushButton {
             id: cancel_button

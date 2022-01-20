@@ -112,5 +112,8 @@
         <file>ui/assets/dialog_cancel_pressed.png</file>
         <file>ui/assets/dialog_ok.png</file>
         <file>ui/assets/dialog_ok_pressed.png</file>
+        <file>ui/component/GitRecordStandardDelegate.qml</file>
+        <file>ui/assets/git_standard_delegate_checkbox_checked.png</file>
+        <file>ui/assets/git_standard_delegate_checkbox_normal.png</file>
     </qresource>
 </RCC>
