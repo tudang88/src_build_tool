@@ -115,5 +115,10 @@
         <file>ui/component/GitRecordStandardDelegate.qml</file>
         <file>ui/assets/git_standard_delegate_checkbox_checked.png</file>
         <file>ui/assets/git_standard_delegate_checkbox_normal.png</file>
+        <file>ui/assets/check_icon_only.png</file>
+        <file>ui/assets/DropButton.png</file>
+        <file>ui/assets/check_icon_small.png</file>
+        <file>ui/component/CustomTypicalCheckBox.qml</file>
+        <file>ui/component/GitBranchPopup.qml</file>
     </qresource>
 </RCC>

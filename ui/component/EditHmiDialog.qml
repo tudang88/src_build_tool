@@ -3,9 +3,46 @@ import QtQuick.Controls 2.12
 Item {
     id: hmi_edit_dialog
     property real __scale: 1.0
+    property var __popUpHolder: null
     signal destroyMe
     width: blur_bg.width
     height: blur_bg.height
+    // create function create Popup
+    function createBranchPopup(target_parent, x, y, w) {
+        if (__popUpHolder !== null) {
+            destroyPopup();
+        }
+        var component = Qt.createComponent("qrc:/ui/component/GitBranchPopup.qml");
+        __popUpHolder = component.createObject(target_parent, {"x":x, "y":y, "width":w});
+        if (__popUpHolder !== null) {
+            __popUpHolder.__scale = hmi_edit_dialog.__scale;
+            __popUpHolder.destroyMe.connect(destroyPopup);
+        }
+
+    }
+
+    // destroy popup
+    function destroyPopup() {
+        if (__popUpHolder !== null) {
+            __popUpHolder.destroy();
+            __popUpHolder = null;
+        }
+    }
+    ListModel {
+        id: hmi_source_list
+        ListElement {select_status: true; reposit_name:"audio0"; select_branch:"pdv_hi_dev"; current_hash:"6d4e007f000000"}
+        ListElement {select_status: false; reposit_name:"audio1"; select_branch:"pdv_hi_dev"; current_hash:"6d4e007f000000"}
+        ListElement {select_status: true; reposit_name:"audio2"; select_branch:"pdv_hi_dev"; current_hash:"6d4e007f000000"}
+        ListElement {select_status: false; reposit_name:"audio3"; select_branch:"pdv_hi_dev"; current_hash:"6d4e007f000000"}
+        ListElement {select_status: true; reposit_name:"audio4"; select_branch:"pdv_hi_dev"; current_hash:"6d4e007f000000"}
+        ListElement {select_status: false; reposit_name:"audio5"; select_branch:"pdv_hi_dev"; current_hash:"6d4e007f000000"}
+        ListElement {select_status: true; reposit_name:"audio6"; select_branch:"pdv_hi_dev"; current_hash:"6d4e007f000000"}
+        ListElement {select_status: false; reposit_name:"audio7"; select_branch:"pdv_hi_dev"; current_hash:"6d4e007f000000"}
+        ListElement {select_status: true; reposit_name:"audio8"; select_branch:"pdv_hi_dev"; current_hash:"6d4e007f000000"}
+        ListElement {select_status: false; reposit_name:"audio9"; select_branch:"pdv_hi_dev"; current_hash:"6d4e007f000000"}
+        ListElement {select_status: true; reposit_name:"audio10"; select_branch:"pdv_hi_dev"; current_hash:"6d4e007f000000"}
+        ListElement {select_status: false; reposit_name:"audio11"; select_branch:"pdv_hi_dev"; current_hash:"6d4e007f000000"}
+    }
     function scale_in_anime() {
         scale_in.start()
     }
@@ -32,6 +69,7 @@ Item {
     Rectangle {
         id: working_area
         color: "white"
+        radius: 5
         width: 1316 * hmi_edit_dialog.__scale
         height: 924 * hmi_edit_dialog.__scale
         anchors.centerIn: parent
@@ -51,12 +89,52 @@ Item {
         // ListView area
         Rectangle {
             id: list_view_box
+            clip: true
             width: 1298 * hmi_edit_dialog.__scale
             height: 765 * hmi_edit_dialog.__scale
-            color: "grey"
+            color: "transparent"
             anchors {
                 horizontalCenter: parent.horizontalCenter
                 top: title_text.bottom
+            }
+            // add lisview
+            ListView {
+                id: main_listview
+                clip: true
+                focus: true
+                spacing: 38 * hmi_edit_dialog.__scale
+                //add ScrollBar
+                boundsBehavior: Flickable.StopAtBounds
+                ScrollBar.vertical: ScrollBar {
+                    id: scroll_bar
+                    parent: main_listview.parent
+                    anchors.top: main_listview.top
+                    anchors.right: main_listview.right
+                    anchors.bottom: main_listview.bottom
+                }
+                anchors {
+                    top: list_view_box.top
+                    bottom: list_view_box.bottom
+                    left: list_view_box.left
+                    right: list_view_box.right
+                    topMargin: 4
+                }
+
+                model: hmi_source_list
+                delegate: GitRecordStandardDelegate {
+                    __scale: hmi_edit_dialog.__scale
+                    anchors {
+                        left: parent.left
+                        leftMargin: 10 * hmi_edit_dialog.__scale
+                    }
+                    onClickedSpin: {
+                        var pop_x = main_listview.currentItem.x
+                        var pop_y = main_listview.currentItem.y
+                        console.log("Current items x:" + pop_x + " y:" + pop_y)
+                        hmi_edit_dialog.createBranchPopup(list_view_box, pop_x, pop_y, popup_w)
+                    }
+
+                }
             }
         }
 
