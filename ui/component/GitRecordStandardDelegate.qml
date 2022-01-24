@@ -11,6 +11,7 @@ Item {
     property var __width: 1267 * __scale
     height: expanded ? __height:0
     width: __width
+
     //background
     Rectangle {
         id: bg

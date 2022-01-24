@@ -99,6 +99,7 @@ Item {
             }
             // add lisview
             ListView {
+                property real viewRectBottom: contentY + height
                 id: main_listview
                 clip: true
                 focus: true
@@ -119,10 +120,10 @@ Item {
                     right: list_view_box.right
                     topMargin: 4
                 }
-
                 model: hmi_source_list
                 delegate: GitRecordStandardDelegate {
                     __scale: hmi_edit_dialog.__scale
+                    property int indexOfThisDelegate: index
                     anchors {
                         left: parent.left
                         leftMargin: 10 * hmi_edit_dialog.__scale
@@ -130,10 +131,9 @@ Item {
                     onClickedSpin: {
                         var pop_x = main_listview.currentItem.x
                         var pop_y = main_listview.currentItem.y
-                        console.log("Current items x:" + pop_x + " y:" + pop_y)
+                        console.log("Current items index:" + indexOfThisDelegate +  " x:" + pop_x + " y:" + pop_y)
                         hmi_edit_dialog.createBranchPopup(list_view_box, pop_x, pop_y, popup_w)
                     }
-
                 }
             }
         }
