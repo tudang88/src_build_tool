@@ -120,5 +120,9 @@
         <file>ui/assets/check_icon_small.png</file>
         <file>ui/component/CustomTypicalCheckBox.qml</file>
         <file>ui/component/GitBranchPopup.qml</file>
+        <file>ui/component/EditAppDialog.qml</file>
+        <file>ui/component/GitSectionDelegate.qml</file>
+        <file>ui/assets/Colapse.png</file>
+        <file>ui/assets/Expanse.png</file>
     </qresource>
 </RCC>

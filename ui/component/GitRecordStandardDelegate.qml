@@ -7,10 +7,15 @@ Item {
     signal clickedItem
     property real __scale: 1.0
     property bool expanded: true
-    property var __height: 92 * __scale
-    property var __width: 1267 * __scale
+    property var __height: 86 * __scale
     height: expanded ? __height:0
-    width: __width
+
+    // use for collapse and expanse
+    Behavior on height {
+        NumberAnimation {
+            duration: 200
+        }
+    }
 
     //background
     Rectangle {
@@ -26,6 +31,7 @@ Item {
     CustomTypicalCheckBox {
         id: git_checkbox
         __scale:git_delegate.__scale
+        __expansed: git_delegate.expanded
         __icon: "qrc:/ui/assets/check_icon_only.png"
         anchors {
             verticalCenter: bg.verticalCenter
@@ -43,6 +49,7 @@ Item {
     Text {
         id: git_app_process
         text: model.reposit_name
+        visible: git_delegate.expanded
         font.weight: Font.Bold
         font.family: "Arial"
         font.pixelSize: 24 * git_delegate.__scale
@@ -55,6 +62,7 @@ Item {
     // Branch name box
     Rectangle {
         id: git_branch_name_box
+        visible: git_delegate.expanded
         height: 48 * git_delegate.__scale
         width: 344 * git_delegate.__scale
         color: "#F7E7CE"
@@ -116,8 +124,10 @@ Item {
     Rectangle {
         id: git_hash_box
         color: "transparent"
+        visible: git_delegate.expanded
         anchors {
             left: git_branch_name_box.right
+            right: bg.right
             leftMargin: 51 * git_delegate.__scale
             verticalCenter: parent.verticalCenter
         }
@@ -136,12 +146,13 @@ Item {
         // edit text
         Rectangle {
             id: git_hash_input_bg
-            width: 474 * git_delegate.__scale
-            height: 25 * git_delegate.__scale
+            height:  25 * git_delegate.__scale
             border.width: 1
             anchors {
                 left: git_hash_label.right
                 leftMargin: 19 * git_delegate.__scale
+                right: git_hash_box.right
+                rightMargin: 19 * git_delegate.__scale
                 verticalCenter: parent.verticalCenter
             }
             TextInput {

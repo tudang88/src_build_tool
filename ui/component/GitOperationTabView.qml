@@ -15,11 +15,13 @@ Item {
     }
    implicitWidth: first_tab.width
    implicitHeight: first_tab.height
+   property int activeTabIndex: 0
     property alias first_tab_model: first_tab.listmodel
     property alias second_tab_model: second_tab.listmodel
     property var currentTabOrder: [3, 2, 1] // the z-order of tab is managed by this array
     function moveToFront(tabIndex) {
 //        console.log("TAB VIEW size: ", tab_view.width, tab_view.height);
+        activeTabIndex = tabIndex;
         switch (tabIndex) {
         case GitOperationTabView.TabName.FIRST:
             tab_view.currentTabOrder[GitOperationTabView.TabName.FIRST] = GitOperationTabView.TabOrder.LAYER_3;
@@ -37,7 +39,7 @@ Item {
             tab_view.currentTabOrder[GitOperationTabView.TabName.FIRST] = GitOperationTabView.TabOrder.LAYER_1;
             break;
         default:
-            console.log("ERROR: Not support tab ", tabIndex)
+            console.log("ERROR: Not support tab ", tabIndex);
             break;
         }
         // emit internal signal

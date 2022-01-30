@@ -10,7 +10,12 @@ Item {
     signal clickedRemoteControlButton
     signal clickedConfigureButton
     function createDiaglog() {
-        var component = Qt.createComponent("qrc:/ui/component/EditHmiDialog.qml");
+        var component =  null;
+            if (GitOperationTabView.TabName.FIRST === git_hmi_tab_area.activeTabIndex) {
+                component = Qt.createComponent("qrc:/ui/component/EditHmiDialog.qml");
+            } else {
+                component = Qt.createComponent("qrc:/ui/component/EditAppDialog.qml");
+            }
         dialogHolder = component.createObject(git_root.parent.parent, {"x":0, "y":0});
         if (dialogHolder !== null) {
             dialogHolder.__scale = git_root.local_scale
